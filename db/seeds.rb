@@ -26,8 +26,8 @@ puts "Making scientists..."
                            avatar: Faker::Avatar.image(size: "200x200", set: "set3"))}
 
 puts "Making missions..."                           
-20.times {Mission.create(name: Faker::TvShows::Buffy.unique.episode,
-                         scientist_id: Scientist.all.sample.id, 
-                         planet_id: Planet.all.sample.id)}
+20.times {Mission.create!(name: Faker::TvShows::Buffy.unique.episode,
+                         scientist: Scientist.all.sample, 
+                         planet: Planet.all.sample)}
 
 puts "Done seeding!"                         
